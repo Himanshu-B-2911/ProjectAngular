@@ -1,0 +1,59 @@
+<div class="container mt-4 mb-5">
+    <!--Top bar-->
+    <div class="d-flex bd-highlight mb-3">
+        <div class="mr-auto p-2 bd-highlight">
+            <h1 class="display-4">Product's</h1>
+        </div>
+        <div class="p-3 bd-highlight">Search</div>
+        <div class="p-2 bd-highlight">
+                <input type="text" 
+              class="form-control" 
+              placeholder="search Product" 
+              id="search" 
+              (keyup)="applyFilter($event)">
+        </div>
+        <div class="p-2 bd-highlight">
+          <button type="button" class="btn btn-success" (click)="openForm()">+ Add Product</button>
+        </div>
+      </div>
+      
+  <table mat-table [dataSource]="ProductdataSource" class="mat-elevation-z8" >
+  
+    <!-- SrNo. Column -->
+    <ng-container matColumnDef="Index">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element; index as i"> {{i+1}}</td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="Product name">
+      <th mat-header-cell *matHeaderCellDef> Product name </th>
+      <td mat-cell *matCellDef="let element"> {{element.prod_Name}} </td>
+    </ng-container>
+  
+    <!-- mobile Column -->
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell *matHeaderCellDef> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.prod_Desc}} </td>
+    </ng-container>
+  
+    <!-- adress Column -->
+    <ng-container matColumnDef="Price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.prod_Price}} </td>
+    </ng-container>
+    <!-- Edit/Delete Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Edit / Delete </th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon  [routerLink]="['/home/productedit/',element._id]">launch</mat-icon>
+        &nbsp;
+        <mat-icon mat-raised-button color="warn" (click)="deleteUser(element._id)">delete_sweep</mat-icon>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <!--    Pagination-->
+  <mat-paginator  [pageSizeOptions]="[20,50,100]" showFirstLastButtons></mat-paginator>
+</div>

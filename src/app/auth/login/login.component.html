@@ -1,0 +1,28 @@
+    <div class="container-fluid"> 
+        <div class="row ">
+            <div class="col-sm-6 bg">
+                     
+            </div>
+        <div class="col-sm-6 bg-dark text-white">
+         <div class="row pt-5">
+           <div class="col-md-8 col-sm-10 offset-sm-1 offset-md-2">
+             <h3 class="display-2 font-weight-bold">Inven<small class="text-muted">tory____</small></h3>
+             <h1 class="display-4">Admin</h1>
+                <form class="pt-3" [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm.value)" class="form-group">
+                    <div> 
+                        <label>Admin</label>
+                        <input type="email" class="form-control"  placeholder="Enter Username" formControlName="email">
+                        <span class="text-warning" *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">Please enter your username</span>         
+                    </div> 
+                    <div class="pb-5"> 
+                        <label>password</label>
+                        <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                        <span class="text-warning" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">Please enter your password</span> 
+                    </div>
+                    <button type="submit" [disabled]="!loginForm.valid" class="btn btn-outline-warning">LogIn</button>
+                </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

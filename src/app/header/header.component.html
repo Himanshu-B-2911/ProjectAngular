@@ -1,0 +1,17 @@
+<nav class="navbar sticky-top navbar-dark bg-dark ">
+    <button 
+            class="navbar-toggler" 
+            type="button" data-toggle="collapse" 
+            data-target="#navbarToggleExternalContent" 
+            aria-controls="navbarToggleExternalContent"  
+            aria-label="Toggle navigation"
+            (click)="drawer.toggle()">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="text-warning">
+        <h3 class="display-4">Inventory</h3>
+      </div>
+      <div>
+        <button type="button" class="btn btn-outline-danger" (click)="onLogout()" >Logout</button>
+      </div>
+  </nav>

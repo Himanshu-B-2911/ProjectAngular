@@ -1,0 +1,71 @@
+<div class="container">
+				<div class="row">
+					<div class="col-8"><h2>Invoice</h2></div>
+					<div class="col-4" ><h2>Order No.<strong>#{{customerData.sales_id}}</strong></h2></div>
+				</div>
+           			  
+    <div class="row">
+    	<div class="col-md-12">
+    		<div class="panel panel-default">
+    			<div class="panel-heading">
+					<h4 class="panel-title"><strong>Order summary</strong></h4>
+					<div class="col-12"><h5>Customer Name :<strong>{{customerData.user_Name}}</strong></h5></div>
+					<div class="row">
+						<div class="col-8"><h5>  Constact No :<strong>{{customerData.mobileNo}}</strong></h5></div>
+						<div class="col-4"><h5>Date :<strong>{{customerData.date | date}}</strong></h5></div>
+					</div>
+					
+
+    			</div>
+    			     <div class="panel-body">
+    				    <div class="table-responsive">
+    					   <table class="table table-condensed">
+    						<thead>
+                                <tr>
+        							<td><strong>Item</strong></td>
+        							<td class="text-center"><strong>Price</strong></td>
+        							<td class="text-center"><strong>Quantity</strong></td>
+        							<td class="text-right"><strong>Totals</strong></td>
+                                </tr>
+    						</thead>
+    						<tbody>
+
+							<ul >
+								<li>
+								
+								</li>
+							</ul>
+    							<!-- foforreach ($order->lineItems as $line) or some such thing here
+    							<tr>
+    								<td>{{item.sales_id}}</td>
+    								<td class="text-center"></td>
+    								<td class="text-center">1</td>
+    								<td class="text-right">$10.99</td>
+    							</tr> -->
+                                
+    							<tr>
+    								<td class="thick-line"></td>
+    								<td class="thick-line"></td>
+    								<td class="thick-line text-center"><strong>Subtotal</strong></td>
+    								<td class="thick-line text-right">{{customerData.GTotal}}</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Shipping</strong></td>
+    								<td class="no-line text-right">$15</td>
+    							</tr>
+    							<tr>
+    								<td class="no-line"></td>
+    								<td class="no-line"></td>
+    								<td class="no-line text-center"><strong>Total</strong></td>
+    								<td class="no-line text-right">{{customerData.GTotal}}</td>
+    							</tr>
+    						</tbody>
+    					</table>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>

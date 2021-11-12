@@ -1,0 +1,24 @@
+<div *ngIf="loginStatus === true">
+    <app-header [drawer]="drawer"></app-header>
+        <!--Side NavBar-->
+        
+      <mat-drawer-container class="example-container" autosize>
+        <mat-drawer #drawer class="example-sidenav bg-dark " mode="side">
+          <div class="card" style="width: 18rem;height:95%;">
+            <div class="card-header pb-5 pt-5 text-center">
+              ADMIN 
+            </div>
+            <ul class="list-group list-group-flush " >
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./">Dashboard</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./Accontlist">Accounts</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./stocklist">Stock</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./purchaselist">Purchase</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./saleform">Sales</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./Userlist">User's</li>
+              <li class="list-group-item btn btn-outline-dark text-left"  routerLink="./productlist">Product Add</li>
+            </ul>
+          </div>
+        </mat-drawer>
+        <router-outlet></router-outlet>
+      </mat-drawer-container>
+    </div>

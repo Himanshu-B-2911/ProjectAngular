@@ -1,0 +1,8 @@
+
+<div [class.isPrinting]="printService.isPrinting">
+ 
+
+    <router-outlet></router-outlet>
+    <app-home *ngIf="loginStatus === true"></app-home>
+    <router-outlet name="print"></router-outlet>
+  </div>

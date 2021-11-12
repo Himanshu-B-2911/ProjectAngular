@@ -1,0 +1,32 @@
+<h1 mat-dialog-title class="text-center">Create User</h1>
+    <div mat-dialog-content>
+        <form  [formGroup]="UserForm" (ngSubmit)="submitUser()" class="m-3">
+              <!-- user name -->
+              <mat-form-field class="example-full-width">
+                    <input matInput placeholder="User name" formControlName="user_Name">
+                    <mat-error *ngIf="!UserForm.get('user_Name').valid ">
+                          You must provide a <strong>name!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- Contact Number -->
+              <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Contact Number" formControlName="mobileNo" maxlength="10" minlength="5" pattern="[0-9]*">
+                    <mat-error *ngIf="!UserForm.get('mobileNo').valid && !UserForm.get('mobileNo').pattern && !UserForm.get('mobileNo').minlength">
+                           You must provide a valid<strong> Contact number!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- address -->
+              <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Address" formControlName="address" ></textarea>
+                    <mat-error *ngIf="!UserForm.get('address').valid ">
+                          You must provide a <strong>User address!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- Submit & Reset -->
+              <div class="reset justify-content-center" mat-dialog-actions>
+                     <button  mat-stroked-button cdkFocusInitial type="submit" class="btn btn-primary" [disabled]="!UserForm.valid">Submit</button>
+              </div>
+        </form>
+</div>
+
+

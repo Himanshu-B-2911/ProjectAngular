@@ -1,0 +1,25 @@
+<div>
+    <div>
+        <h1  class="text-center mt-3 display-4">Edit User</h1>
+    </div>
+    <div class="container">
+        <form [formGroup]="UserForm" (ngSubmit)="UpdateUser()" class="m-3">
+            <div class="form-group">
+              <label for="name">User name</label>
+              <input type="text" class="form-control" formControlName="user_Name">
+              <small id="emailHelp" class="form-text text-muted"></small>
+           </div>
+           <div class="form-group">
+              <label for="mobileNo">Contact Number</label>
+              <input type="tel" class="form-control" formControlName="mobileNo">
+           </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Address</label>
+              <textarea class="form-control"  rows="3" formControlName="address"></textarea>
+          </div>
+          <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary "  [disabled]="!UserForm.valid">UPDATE</button>
+            </div>
+      </form>
+</div>
+</div>  

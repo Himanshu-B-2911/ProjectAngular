@@ -1,0 +1,33 @@
+<h1 mat-dialog-title class="text-center">Add Product</h1>
+    <div mat-dialog-content>
+        <form  [formGroup]="productform" (ngSubmit)="submitProduct()" class="m-3">
+              <!-- Product name -->
+              <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product name" formControlName="prod_Name">
+                    <mat-error *ngIf="!productform.get('prod_Name').valid ">
+                          You must provide a <strong>Product name!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- Product Description -->
+              <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Description" formControlName="prod_Desc" >
+                    <mat-error *ngIf="!productform.get('prod_Desc').valid">
+                           You must provide a valid<strong> Product Description!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- Product Price -->
+              <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Price" formControlName="prod_Price" pattern="[0-9]*" minlength="1" maxlength="10" >
+                    <mat-error *ngIf="!productform.get('prod_Price').valid && !productform.get('prod_Price').pattern && !productform.get('prod_Price').minlength  ">
+                        
+                          You must provide a <strong>Product Price!</strong>
+                    </mat-error>
+              </mat-form-field>
+              <!-- Submit & Reset -->
+              <div class="reset justify-content-center" mat-dialog-actions>
+                     <button  mat-stroked-button cdkFocusInitial type="submit" class="btn btn-primary" [disabled]="!productform.valid">Submit</button>
+              </div>
+        </form>
+</div>
+
+
